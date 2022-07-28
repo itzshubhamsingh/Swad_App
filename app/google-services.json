@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "101505744490",
+    "project_id": "swad-app-76121",
+    "storage_bucket": "swad-app-76121.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101505744490:android:29d2631556e18badb89413",
+        "android_client_info": {
+          "package_name": "com.example.swadapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101505744490-ukpl6gos68c13j0g2a0q80vkef5ho43a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn0NEuxNMFraqtytw9tFNeLfgceNOvyuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101505744490-ukpl6gos68c13j0g2a0q80vkef5ho43a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

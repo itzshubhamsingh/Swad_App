@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.swadapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.swadapp.ui.gallery.GalleryFragment"
+        android:label="My Orders"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.swadapp.ui.slideshow.SlideshowFragment"
+        android:label="My Account"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/privacy_policy"
+        android:name="com.example.swadapp.Fragment.PrivacyPolicy"
+        android:label="Privacy Policy"
+        tools:layout="@layout/fragment_privacy_policy" />
+    <fragment
+        android:id="@+id/contact_us"
+        android:name="com.example.swadapp.Fragment.ContactUs"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact_us" />
+
+</navigation>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/homeicon"
+            android:menuCategory="secondary"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/myordericon"
+            android:menuCategory="secondary"
+            android:title="My Orders" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/myaccounticon"
+            android:menuCategory="secondary"
+            android:title="My Account" />
+    </group>
+<!--    <item android:menuCategory="secondary"-->
+<!--        android:title=""></item>-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/privacy_policy"
+            android:icon="@drawable/policyicon"
+            android:menuCategory="secondary"
+            android:title="Privacy Policy"/>
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/contactusicon"
+            android:menuCategory="secondary"
+            android:title="Contact Us"/>
+
+    </group>
+
+</menu>
