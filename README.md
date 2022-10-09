@@ -38,5 +38,13 @@ Currently, there are basic functionalities in the App, but some cool features wi
 ### Logout from your Account
 ![logout](https://user-images.githubusercontent.com/82580966/194724777-de29cbb5-2f14-4a5a-880f-a82539e1bb4f.png)
 
+## Video of Functioning
+
+
+
+
+https://user-images.githubusercontent.com/82580966/194746254-7e6d9229-c762-4ac7-98d2-f55ff29eccd4.mp4
+
+
 
 
