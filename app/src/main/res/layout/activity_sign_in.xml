@@ -104,7 +104,7 @@
                     android:id="@+id/btnsignin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     android:background="@drawable/btn_gradient"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:text="sign in"
@@ -117,61 +117,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:gravity="center_horizontal"
                     android:text="@string/already_sinup"
                     android:textColor="#4CAF50" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
-
-                    <View
-                        android:id="@+id/view6"
-                        android:layout_width="112dp"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:background="#4CAF50" />
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_weight="1"
-                        android:text="Or sign-in with"
-                        android:textColor="#4CAF50" />
-
-                    <View
-                        android:id="@+id/view4"
-                        android:layout_width="112dp"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:background="#4CAF50" />
-
-                </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="50dp"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/gmail_signin"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/gmailicon" />
-
-
-
-            </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

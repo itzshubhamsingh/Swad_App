@@ -45,7 +45,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignIn extends AppCompatActivity {
 
     Button sign;
-    ImageView signin;
+//    ImageView signin;
     TextView view1;
     EditText username, password;
     ProgressDialog progressDialog;   // whenever you will click on signup it will load
@@ -114,13 +114,13 @@ public class SignIn extends AppCompatActivity {
             }
         });
 
-        signin = findViewById(R.id.gmail_signin);
-        signin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signIn();
-            }
-        });
+//        signin = findViewById(R.id.gmail_signin);
+//        signin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                signIn();
+//            }
+//        });
 
         if (mAuth.getCurrentUser() != null) {
             Intent intent = new Intent(SignIn.this, MainActivity.class);
@@ -182,7 +182,7 @@ public class SignIn extends AppCompatActivity {
                             Intent intent = new Intent(SignIn.this, MainActivity.class);
                             startActivity(intent);
                             finish();
-                            
+
                         }
                         else{
                             // If sign in fails, display a message to the user

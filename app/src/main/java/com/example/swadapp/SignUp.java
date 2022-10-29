@@ -33,7 +33,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -42,11 +46,12 @@ public class SignUp extends AppCompatActivity {
     Button register;
     ImageView signup;
     TextView view, txt;
-    EditText username, password, email;
+    EditText username, password, email, phone, postal;
     private FirebaseAuth mAuth;
     FirebaseDatabase database;
     ProgressDialog progressDialog;   // whenever you will click on signup it will load
     GoogleSignInClient googleSignInClient;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +64,14 @@ public class SignUp extends AppCompatActivity {
         username=findViewById(R.id.username_of_signup);
         password=findViewById(R.id.editTextTextPassword);
         email = findViewById(R.id.email);
+        phone = findViewById(R.id.phoneno);
+        postal = findViewById(R.id.postalcode);
+
 
 
         progressDialog = new ProgressDialog(SignUp.this);
         progressDialog.setTitle("Creating Account");
-        progressDialog.setMessage("We are creating You Account");
+        progressDialog.setMessage("We are creating Your Account");
 
 
         // taking image from camera and showing on the image section
@@ -95,19 +103,22 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        googleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        signup = findViewById(R.id.gmail_signup);
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signUp();
-            }
-        });
+        // Sign in using Gmail account below
+
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken(getString(R.string.default_web_client_id))
+//                .requestEmail()
+//                .build();
+//        googleSignInClient = GoogleSignIn.getClient(this, gso);
+//
+//        signup = findViewById(R.id.gmail_signup);
+//        signup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                signUp();
+//            }
+//        });
 
         // Email Authentication Work Below
 
@@ -118,11 +129,11 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if((username.getText().toString()).length() == 0  || (password.getText().toString()).length()==0 || (email.getText().toString()).length()==0){
+                if((username.getText().toString()).length() == 0 || (password.getText().toString()).length()==0 || (email.getText().toString()).length()==0 || (phone.getText().toString()).length()==0 || (postal.getText().toString()).length()==0){
                     new AlertDialog.Builder(SignUp.this)
                             .setIcon(R.drawable.ic_baseline_warning_24)
                             .setTitle("Alert")
-                            .setMessage("Name, Email Address and Password Can not be left Empty")
+                            .setMessage("Any Information can not be left blank")
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -144,13 +155,20 @@ public class SignUp extends AppCompatActivity {
 
                             if (task.isSuccessful()) {
 
+                                // Registration Work Below
+
                                 User user = new User(username.getText().toString(), email.getText().toString(), password.getText().toString());
                                 String id = task.getResult().getUser().getUid();
                                 database.getReference().child("Users").child(id).setValue(user);
 
+                                // Uploading data to Firebase work below
+
+                                User user2 = new User(username.getText().toString(), email.getText().toString(), password.getText().toString(), userID, postal.getText().toString(), phone.getText().toString());
+                                database.getReference().child("User Details").child(id).setValue(user2);
+
                                 Toast.makeText(SignUp.this, "You have been Successfully Registered", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(SignUp.this, MainActivity.class);
+                                Intent intent = new Intent(SignUp.this, SignIn.class);
                                 startActivity(intent);
                                 finish();
 

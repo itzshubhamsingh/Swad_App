@@ -1,22 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/white_back"
     tools:context=".ui.slideshow.SlideshowFragment">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center_horizontal"
+                    android:text="My Account"
+                    android:textColor="#F81EBCAE"
+                    android:textSize="30sp"
+                    android:textStyle="bold|italic" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="#F81EBCAE" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="14dp"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="#BC12BD52"
+                    app:civ_border_width="2dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:focusable="true"
+
+                    android:focusableInTouchMode="true"
+                    android:textColorHint="#F81EBCAE">
+
+                    <EditText
+                        android:id="@+id/username_of_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/editviewbackground"
+                        android:drawableLeft="@drawable/user_icon"
+                        android:ems="10"
+                        android:hint="Full Name"
+                        android:inputType="textPersonName"
+                        android:padding="15dp"
+                        android:paddingBottom="20dp"
+                        android:textColor="#F81EBCAE"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+
+                    android:textColorHint="#F81EBCAE">
+
+                    <EditText
+                        android:id="@+id/phoneno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/editviewbackground"
+                        android:drawableLeft="@drawable/phone_icon"
+                        android:ems="10"
+                        android:hint="Phone"
+                        android:inputType="phone"
+                        android:padding="15dp"
+                        android:textColor="#F81EBCAE"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+
+                    android:textColorHint="#F81EBCAE">
+
+                    <EditText
+                        android:id="@+id/postalcode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/editviewbackground"
+                        android:drawableLeft="@drawable/post_icon"
+                        android:ems="10"
+                        android:hint="Postal Code"
+                        android:inputType="textPostalAddress"
+                        android:padding="15dp"
+                        android:textColor="#F81EBCAE"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+
+                    android:textColorHint="#F81EBCAE">
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/editviewbackground"
+                        android:drawableLeft="@drawable/email_icon"
+                        android:ems="10"
+                        android:hint="Email Address"
+                        android:inputType="textEmailAddress"
+                        android:padding="15dp"
+                        android:textColor="#F81EBCAE"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+
+                    android:textColorHint="#F81EBCAE">
+
+                    <EditText
+                        android:id="@+id/editTextTextPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/editviewbackground"
+                        android:drawableLeft="@drawable/pass_icon"
+                        android:ems="10"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="15dp"
+                        android:textColor="#F81EBCAE"
+                        tools:ignore="SpeakableTextPresentCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_gradient"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:text="Update"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:backgroundTint="#F40EA246" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

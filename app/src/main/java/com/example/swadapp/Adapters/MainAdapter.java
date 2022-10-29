@@ -8,10 +8,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.AnimatorRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +30,7 @@ import java.util.ArrayList;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder>{
     ArrayList<MainModel> list;
+    int lastPos = -1;
     Context context;
     private FirebaseAuth mAuth;
 
@@ -51,6 +55,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder>{
         holder.price.setText(model.getPrice());
         holder.description.setText(model.getDescription());
         holder.mainName.setText(model.getName());
+
+        setAnimation(holder.itemView, position); //  Setting animation
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +94,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder>{
                 }
             }
         });
+    }
+
+    void setAnimation(View view, int position){
+        Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+        view.setAnimation(animation);
     }
 
     @Override
